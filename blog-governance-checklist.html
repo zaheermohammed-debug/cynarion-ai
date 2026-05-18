@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Governance Checklist: 10 Things Your Enterprise Needs | Cynarion AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --teal: #1D9E75;
+            --amber: #BA7517;
+            --light-gray: #F1EFE8;
+            --white: #FFFFFF;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --border: #E0E0E0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        nav {
+            background: var(--navy);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .logo-accent {
+            color: var(--teal);
+        }
+
+        article {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .article-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-top: 1rem;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 2.5rem 0 1rem;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 2rem 0 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .callout {
+            background: var(--light-gray);
+            border-left: 4px solid var(--teal);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .callout h4 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-size: 16px;
+        }
+
+        ul, ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--teal);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .checklist-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+        }
+
+        .checklist-item h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo"><span>Cynarion</span><span class="logo-accent">AI</span></a>
+    </nav>
+
+    <article>
+        <a href="/#resources" class="back-link">← Back to Resources</a>
+        
+        <div class="article-header">
+            <h1>The AI Governance Checklist: 10 Things Your Enterprise Needs</h1>
+            <div class="article-meta">Published January 2025 | 10 min read</div>
+        </div>
+
+        <p>Most AI governance failures don't happen because the technology broke. They happen because nobody knew who was responsible when it did.</p>
+
+        <p>I've walked into too many enterprises where AI projects are running in production with no documentation, no oversight, and no accountability. Marketing has a chatbot. Operations deployed an automation tool. Finance built a forecasting model. All of them use machine learning. None of them went through governance review.</p>
+
+        <p>This isn't malicious. It's organizational drift. AI tools are easier to deploy than traditional enterprise systems. A product manager can spin up a predictive model in three weeks. By the time risk and compliance find out, it's already processing customer data.</p>
+
+        <p>The checklist below isn't theory. It's built from 20 years of watching what breaks during audits, regulatory exams, and system failures. If you can honestly check off all ten items, your governance program is ahead of 90% of enterprises. If you can't, you know where to start.</p>
+
+        <div class="checklist-item">
+            <h3>1. An AI Inventory That's Actually Complete</h3>
+            
+            <p>You need a system of record for every AI model, algorithm, and decision-support tool running in your environment. Not a spreadsheet someone updates quarterly. A living inventory that gets updated when systems are deployed, modified, or retired.</p>
+
+            <p>The inventory should track: what the system does, who owns it, what data it uses, what decisions it makes, when it was last validated, and what its risk rating is. If you can't answer those questions for every AI system in production, you don't have governance. You have hope.</p>
+
+            <p>The hardest part isn't building the inventory. It's keeping it current. That requires integration into your change management process. No AI deployment gets approved without an inventory entry. No vendor contract gets signed without registering their AI tools. Make inventory updates a mandatory step, not an optional one.</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3>2. Clear Accountability for AI Risk</h3>
+            
+            <p>Who gets fired if your AI system discriminates against customers? If the answer is "it depends" or "the team collectively owns it," you have a problem.</p>
+
+            <p>Effective governance requires named accountability. One person owns AI risk at the enterprise level. That person has authority to stop deployments, demand validation, and escalate to the board. This is typically a Chief Risk Officer or Chief Data Officer role, but the title matters less than the mandate.</p>
+
+            <p>Below that executive, every AI system needs an owner. A business leader who understands what the system does, accepts responsibility for its outputs, and escalates when something goes wrong. Technical teams build and maintain systems. Business owners accept the risk.</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3>3. A Pre-Deployment Review Process</h3>
+            
+            <p>Nothing goes to production without passing through a gate. That gate includes risk assessment, data privacy review, compliance validation, and security clearance.</p>
+
+            <p>The review process should be risk-based. Low-impact automation tools get a light-touch review. High-impact decision systems get deep scrutiny. But every AI system goes through the process. No exceptions for pilot projects. No shortcuts for vendor solutions. No "we'll formalize governance later" deployments.</p>
+
+            <p>The review should produce a documented decision: approved, approved with conditions, or rejected. That decision gets recorded in your inventory. It becomes part of the audit trail. Years later, when someone asks why you deployed this system, you can point to the approval record and the supporting documentation.</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3>4. Independent Validation for High-Risk Models</h3>
+            
+            <p>Your data science team built the model. They cannot validate it. You need independent reviewers who understand both the technical implementation and the business context.</p>
+
+            <p>Validation isn't about checking for bugs. It's about challenging assumptions. Does this model behave as expected across different scenarios? Are there edge cases where it fails? Could it produce unintended consequences? Is there bias in the training data?</p>
+
+            <p>Small enterprises struggle with independence. If you only have one data science team, outsource validation to a third party. If you have multiple teams, cross-validate. The fraud detection team validates the credit model. The risk analytics team validates the marketing algorithm. Build a rotation schedule and stick to it.</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3>5. Ongoing Performance Monitoring</h3>
+            
+            <p>AI systems drift. The model that worked perfectly at launch starts degrading six months later because the real-world data distribution changed. Without monitoring, you won't know until customers complain or auditors find it.</p>
+
+            <p>Monitoring requires three things: defined metrics, automated tracking, and escalation thresholds. You're not monitoring unless you can answer: What performance level is acceptable? How often are we measuring it? Who gets alerted when it degrades? What action do we take when thresholds are breached?</p>
+
+            <p>The best monitoring programs I've seen combine automated dashboards with quarterly human review. Systems check performance daily. Analysts review trends monthly. Governance committees assess fitness quarterly. That layered approach catches both sudden failures and gradual drift.</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3>6. Documentation That Exists Before Deployment</h3>
+            
+            <p>The moment someone asks you to justify a decision your AI system made, you need documentation. Not documentation you write after the fact. Documentation that existed when you made the decision to deploy.</p>
+
+            <p>That includes: the business case for building the system, the alternatives you considered, the data sources you used, the validation results that supported deployment, the risk assessment that approved it, and the monitoring plan that governs ongoing operation.</p>
+
+            <p>Good documentation isn't lengthy. It's complete. A five-page model card with the essential facts beats a 50-page document that buries key details in regulatory boilerplate. Write for the auditor who shows up two years later and asks "why did you build this?" Your documentation should answer that question without requiring an archaeologist.</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3>7. A Vendor Risk Management Process for Third-Party AI</h3>
+            
+            <p>Buying an AI solution from a vendor doesn't transfer the risk. You own it. If that vendor's fraud detection tool discriminates against customers, you're liable. If their chatbot leaks sensitive data, you're explaining it to regulators.</p>
+
+            <p>That means due diligence before procurement and oversight after deployment. Before you sign a contract, get access to model documentation. Understand how the system works. Review their validation methodology. Check their data handling practices. Negotiate contract terms that give you ongoing visibility.</p>
+
+            <p>After deployment, treat vendor AI like your own. Include it in your inventory. Monitor its performance. Review it periodically. Don't assume the vendor is handling governance on your behalf. They're not.</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3>8. Training Programs That Reach Beyond Technical Teams</h3>
+            
+            <p>Data scientists need to understand model development best practices. That's obvious. Less obvious: business leaders need to understand what AI can and can't do. Product managers need to understand governance requirements. Procurement teams need to know what questions to ask vendors.</p>
+
+            <p>AI literacy isn't optional anymore. You can't govern what your stakeholders don't understand. Build role-based training that teaches people what they need to know. Developers get technical training on responsible AI practices. Business owners get training on risk assessment and approval processes. Executives get board-level briefings on AI risks and regulatory obligations.</p>
+
+            <p>The training shouldn't be a one-time event. AI governance evolves. Regulations change. Best practices mature. Run refresher courses annually. Include governance updates in onboarding programs. Make AI literacy a performance metric for leaders who deploy these systems.</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3>9. A Board-Level Reporting Mechanism</h3>
+            
+            <p>Your board should know what AI systems you're running, what risks they create, and how you're managing those risks. Not at a technical level. At a "what keeps me awake at night" level.</p>
+
+            <p>Effective board reporting covers: the number and criticality of AI systems in production, new deployments since the last update, validation findings and remediation status, incidents and near-misses, emerging regulatory obligations, and the overall maturity of your governance program.</p>
+
+            <p>The reporting should be concise. Boards don't need 40-slide decks. They need a dashboard that highlights what matters and a narrative that explains what's changing. If your board reporting takes more than 15 minutes to present, it's too detailed. If it doesn't spark questions about risk and accountability, it's too shallow.</p>
+        </div>
+
+        <div class="checklist-item">
+            <h3>10. Consequences for Shadow AI</h3>
+            
+            <p>If business units can deploy AI systems without going through governance, your program is decorative. Real governance requires enforcement.</p>
+
+            <p>That means clear policies about what requires approval. It means procurement controls that flag AI tools. It means consequences when people bypass the process. Not draconian punishment. But clear escalation. A manager who deploys an unsanctioned AI tool gets a conversation with their director. If it happens again, it becomes a performance issue.</p>
+
+            <p>The hardest part of enforcement is discovery. You need ways to find shadow AI before auditors do. That might mean regular technology audits. It might mean vendor spending reviews that flag AI subscriptions. It might mean culture work that makes governance feel like a partnership rather than a roadblock.</p>
+
+            <p>The goal isn't to slow down innovation. It's to ensure innovation happens responsibly. Fast approvals for low-risk tools. Thorough review for high-impact systems. Zero tolerance for governance bypass.</p>
+        </div>
+
+        <h2>Using This Checklist</h2>
+
+        <p>Go through each item and assess where you stand. Be honest. If you can't demonstrate it in an audit, it doesn't count.</p>
+
+        <p>You don't need to solve everything at once. Pick the gaps that create the most risk. An incomplete inventory is a bigger problem than imperfect board reporting. Missing validation for high-risk models is more urgent than training deficits. Prioritize the items that could cause regulatory findings or operational failures.</p>
+
+        <p>Then build incrementally. Fix one gap. Document the improvement. Move to the next. Governance maturity is a journey measured in quarters, not weeks. Show progress. Demonstrate momentum. Build a program that gets stronger every cycle.</p>
+
+        <h2>The Reality Check</h2>
+
+        <p>If this checklist feels overwhelming, you're not alone. Most enterprises struggle with at least half of these items. The ones that succeed don't have more resources or smarter people. They have executive commitment and disciplined execution.</p>
+
+        <p>AI governance isn't an IT project. It's a business capability. It requires cross-functional collaboration, sustained investment, and leadership air cover. Without those, you're just documenting risk without managing it.</p>
+
+        <p>But the payoff is real. Enterprises with mature AI governance programs deploy systems faster because they're not scrambling to retrofit compliance. They avoid regulatory findings because they can demonstrate control. They prevent operational failures because risks get surfaced before deployment.</p>
+
+        <p>This checklist gives you the blueprint. The execution is up to you. Start now. Measure progress. Hold teams accountable. And when auditors or regulators show up, you'll be ready to prove that your AI governance is more than just policy documents.</p>
+
+    </article>
+
+    <footer>
+        <p>&copy; 2025 Cynarion AI. All rights reserved.</p>
+    </footer>
+</body>
+</html>

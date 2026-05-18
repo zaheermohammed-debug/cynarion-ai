@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third-Party AI Vendor Assessment: What to Ask | Cynarion AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --teal: #1D9E75;
+            --amber: #BA7517;
+            --light-gray: #F1EFE8;
+            --white: #FFFFFF;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --border: #E0E0E0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        nav {
+            background: var(--navy);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .logo-accent {
+            color: var(--teal);
+        }
+
+        article {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .article-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-top: 1rem;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 2.5rem 0 1rem;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 2rem 0 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .callout {
+            background: var(--light-gray);
+            border-left: 4px solid var(--teal);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .callout h4 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-size: 16px;
+        }
+
+        ul, ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--teal);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .question-block {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo"><span>Cynarion</span><span class="logo-accent">AI</span></a>
+    </nav>
+
+    <article>
+        <a href="/#resources" class="back-link">← Back to Resources</a>
+        
+        <div class="article-header">
+            <h1>Third-Party AI Vendor Assessment: What to Ask</h1>
+            <div class="article-meta">Published February 2025 | 9 min read</div>
+        </div>
+
+        <p>Your procurement team wants to buy an AI-powered platform. The vendor's sales deck promises accuracy, efficiency, and seamless integration. The contract is ready to sign. Your legal team reviewed the liability clauses. Your IT team confirmed technical compatibility. Your security team verified the hosting infrastructure meets standards.</p>
+
+        <p>Nobody asked how the AI actually works.</p>
+
+        <p>This happens constantly. Organizations treat AI vendors like traditional software vendors. They focus on functionality, pricing, and support terms. They miss the governance questions that determine whether the AI is safe to use in a regulated environment.</p>
+
+        <p>I've reviewed dozens of vendor AI implementations that went sideways after deployment. Not because the technology failed. Because nobody asked the right questions before signing the contract. The vendor couldn't explain how their model made decisions. They had no validation methodology. They refused to provide model documentation. The contract gave you no rights to audit or monitor performance.</p>
+
+        <p>By the time you discover these gaps, you're locked into a three-year contract and the system is processing customer data. Fixing that problem costs more than preventing it.</p>
+
+        <p>This guide walks through the questions you need to ask before purchasing any AI solution. These aren't theoretical concerns. They're drawn from real vendor assessments and audit findings across financial services, insurance, and healthcare enterprises.</p>
+
+        <h2>Model Transparency and Explainability</h2>
+
+        <div class="question-block">
+            <p><strong>Can you provide documentation of how your AI model works?</strong></p>
+            <p>You need more than a marketing explanation. The documentation should describe the algorithm type (neural network, decision tree, ensemble, etc.), the training methodology, and the general architecture. You're not asking for proprietary source code. You're asking for enough detail to understand what you're buying.</p>
+            <p>Red flag: "Our model is proprietary and we can't share technical details." If they can't explain how it works at a conceptual level, walk away.</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>Can your model explain individual decisions?</strong></p>
+            <p>If the AI denies a loan application or flags a transaction as fraudulent, can it tell you why? Not every AI system needs full explainability. But if your use case involves consequential decisions about people—credit, underwriting, fraud detection, hiring—you need a model that can justify its outputs.</p>
+            <p>Acceptable answers include: feature importance rankings, contribution scores, counterfactual explanations, or rule-based decision paths. Unacceptable: "It's a black box and we can't explain individual predictions."</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>How do you handle edge cases or unusual inputs?</strong></p>
+            <p>AI models break down when they encounter data they weren't trained on. A fraud detection system trained on North American transactions might fail when you expand to Europe. An underwriting model built on historical data might not handle a pandemic scenario.</p>
+            <p>The vendor should explain how they detect out-of-distribution inputs and what the system does when it encounters them. Does it default to a safe fallback? Does it escalate to human review? Does it silently fail and produce nonsense?</p>
+        </div>
+
+        <h2>Training Data and Bias</h2>
+
+        <div class="question-block">
+            <p><strong>What data did you use to train the model?</strong></p>
+            <p>The quality of an AI system depends entirely on its training data. You need to understand what data sources the vendor used, how they collected it, and whether it's representative of your population.</p>
+            <p>If they trained a credit model on historical lending data from the 1990s, it probably contains biased patterns. If they built a fraud detection system using only data from large banks, it might not work for smaller institutions. If they scraped web data without cleaning it, there's a good chance the model picked up harmful biases.</p>
+            <p>Red flag: Refusal to discuss training data at all. That's usually a sign they don't want to admit their data quality is questionable.</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>How do you test for bias?</strong></p>
+            <p>This should be a standard part of their development process, not something they bolt on after the fact. Ask what bias metrics they track, what fairness thresholds they enforce, and what remediation steps they take when bias is detected.</p>
+            <p>Good vendors have systematic testing for disparate impact across protected classes. They can show you their bias testing results. They explain how they balance fairness with accuracy.</p>
+            <p>Bad vendors claim their model is "objective because it's math." AI models trained on biased data produce biased outputs. Math doesn't fix that.</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>Can you share the demographic breakdown of your training data?</strong></p>
+            <p>If the model was trained on data that's 80% male and 20% female, it will likely perform worse for women. If the training data skews heavily toward one age group, geography, or income bracket, performance will be uneven.</p>
+            <p>You need to know whether the training population matches your user population. If it doesn't, you need to understand what adjustments the vendor made to account for that gap.</p>
+        </div>
+
+        <h2>Validation and Performance</h2>
+
+        <div class="question-block">
+            <p><strong>How do you validate model performance?</strong></p>
+            <p>The vendor should have an independent validation process. Not just "we tested it internally." Actual third-party validation or at minimum, a validation team that's separate from the development team.</p>
+
+            <p>Ask to see validation reports. They should include: accuracy metrics, precision and recall, performance across different cohorts, edge case testing results, and stress scenario outcomes.</p>
+            <p>If they only provide overall accuracy ("our model is 95% accurate"), that's insufficient. You need disaggregated metrics. Does it perform equally well across age groups? Geographies? Customer segments?</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>What performance metrics do you track in production?</strong></p>
+            <p>Models drift over time. The vendor needs ongoing monitoring to detect when performance degrades. Ask what metrics they track, how often they review them, and what triggers a model update.</p>
+            <p>Strong vendors have automated dashboards that track dozens of performance indicators daily. They alert when thresholds are breached. They have documented escalation procedures.</p>
+            <p>Weak vendors say "we monitor it" without specifying how.</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>How often do you retrain the model?</strong></p>
+            <p>A model trained two years ago on historical data is probably stale. The world changes. Data distributions shift. Models that aren't regularly updated become less accurate over time.</p>
+            <p>The vendor should have a retraining schedule. Some models need quarterly updates. Others can go a year. But "we trained it once and haven't touched it since" is a red flag.</p>
+        </div>
+
+        <h2>Data Handling and Privacy</h2>
+
+        <div class="question-block">
+            <p><strong>What data does your system collect?</strong></p>
+            <p>AI systems often require more data than traditional software. Make sure you understand what gets collected, how it's used, and where it's stored. If the vendor needs customer personal information, transaction history, or behavioral data, that creates privacy obligations for you.</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>Does your model use our data for training?</strong></p>
+            <p>Some vendors include clauses that let them use your data to improve their models. That's a problem if you're a regulated institution. Your customer data shouldn't train models that benefit your competitors.</p>
+            <p>Make sure the contract explicitly prohibits using your data for model training unless you grant written permission.</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>How do you handle data security?</strong></p>
+            <p>Standard questions about encryption, access controls, and audit logging all apply. But also ask about model security. Can adversaries manipulate inputs to cause the model to produce specific outputs? What safeguards exist to prevent that?</p>
+        </div>
+
+        <h2>Compliance and Regulatory Alignment</h2>
+
+        <div class="question-block">
+            <p><strong>What regulatory frameworks does your solution comply with?</strong></p>
+            <p>If you're in financial services, you need vendors who understand OSFI E-23, NIST AI RMF, or equivalent standards. If you're in healthcare, HIPAA compliance matters. If you operate in Europe, GDPR and the EU AI Act are relevant.</p>
+            <p>The vendor should be able to articulate which regulations apply and how their product meets those requirements. Bonus points if they've been through third-party assessments or certifications.</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>Can you provide audit rights in the contract?</strong></p>
+            <p>You need the right to audit the vendor's AI practices. That includes reviewing validation reports, model documentation, and performance monitoring results. Without contractual audit rights, you're trusting the vendor completely.</p>
+            <p>Negotiate contract language that gives you annual audit rights and the ability to request additional reviews if performance degrades or incidents occur.</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>What happens if your model violates our regulatory obligations?</strong></p>
+            <p>Liability clauses matter. If the vendor's AI system causes a regulatory finding, who pays the fine? Who handles remediation? Who manages the reputational damage?</p>
+            <p>You can't fully transfer the risk. Regulators hold you accountable for your use of vendor AI. But you can negotiate liability sharing and indemnification clauses that reduce your financial exposure.</p>
+        </div>
+
+        <h2>Change Management and Updates</h2>
+
+        <div class="question-block">
+            <p><strong>How do you notify clients of model changes?</strong></p>
+            <p>When the vendor updates their AI model, that's a material change. You need advance notice so you can review the update, assess the impact, and validate performance before it goes live.</p>
+            <p>Make sure the contract requires written notification of model changes at least 30 days before deployment. You should have the right to review documentation, request validation results, and opt out of updates that create unacceptable risk.</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>Can we test updates in a sandbox before production?</strong></p>
+            <p>Strong vendors provide staging environments where you can test new model versions against your data before accepting them into production. That lets you verify that performance hasn't degraded and that the new version works for your use case.</p>
+        </div>
+
+        <h2>Incident Response and Support</h2>
+
+        <div class="question-block">
+            <p><strong>What's your process when the model fails?</strong></p>
+            <p>AI systems break. Sometimes spectacularly. The vendor should have documented incident response procedures, escalation paths, and service level agreements.</p>
+            <p>Ask about their worst production incident. How did they detect it? How quickly did they respond? What did they do to prevent recurrence? Their answer tells you how seriously they take operational risk.</p>
+        </div>
+
+        <div class="question-block">
+            <p><strong>What support do you provide for governance and compliance?</strong></p>
+            <p>Your governance team will need model documentation, validation reports, and performance data. The vendor should provide those materials as part of the service. If they charge separately for governance support, factor that into your total cost.</p>
+        </div>
+
+        <h2>Making the Decision</h2>
+
+        <p>These questions won't all be deal-breakers. Some vendors will have strong answers to most questions and weak answers to a few. That's fine. The goal isn't perfection. It's informed decision-making.</p>
+
+        <p>After the vendor assessment, you should be able to answer: Do we understand how this AI works? Can we validate its performance? Can we monitor it after deployment? Do we have contractual protections? Are we comfortable with the residual risk?</p>
+
+        <p>If the answer to any of those is no, either negotiate better terms or choose a different vendor.</p>
+
+        <p>The worst outcome is signing a contract without asking these questions, discovering the answers six months later, and realizing you bought an AI system you can't govern. That's expensive to fix and even more expensive to explain to auditors.</p>
+
+        <div class="callout">
+            <h4>Final Advice</h4>
+            <p>Bring your governance team into vendor evaluations early. Don't wait until after procurement selects a vendor. By then, the decision is half-made and it's harder to walk away. Involve risk, compliance, and legal from the start. Let them ask these questions during the sales process. Vendors who can't answer them don't deserve your business.</p>
+        </div>
+
+    </article>
+
+    <footer>
+        <p>&copy; 2025 Cynarion AI. All rights reserved.</p>
+    </footer>
+</body>
+</html>
