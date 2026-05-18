@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cynarion AI - AI Governance & Compliance for Regulated Enterprises</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --teal: #1D9E75;
+            --amber: #BA7517;
+            --light-gray: #F1EFE8;
+            --white: #FFFFFF;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --border: #E0E0E0;
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--navy);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: -0.5px;
+            cursor: pointer;
+        }
+
+        .logo-accent {
+            color: var(--teal);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: var(--teal);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #0d1f38 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #0d8f67;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(29, 158, 117, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 4rem 0;
+        }
+
+        section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        section h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--teal);
+            box-shadow: 0 8px 24px rgba(29, 158, 117, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Accent Box */
+        .accent-box {
+            background: var(--light-gray);
+            border-left: 4px solid var(--teal);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+        }
+
+        .accent-box h4 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-size: 16px;
+        }
+
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+
+        .two-col h3 {
+            margin-top: 0;
+        }
+
+        .two-col ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .two-col li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .two-col li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-hero {
+            background: var(--light-gray);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--teal);
+        }
+
+        .about-hero h1 {
+            font-size: 42px;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .about-hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            padding: 2rem;
+            border-left: 3px solid var(--teal);
+            margin-left: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item h4 {
+            color: var(--navy);
+            font-size: 16px;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--teal);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(29, 158, 117, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-post {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover {
+            border-color: var(--teal);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .blog-post-header {
+            background: linear-gradient(135deg, var(--navy) 0%, #0d1f38 100%);
+            color: var(--white);
+            padding: 2rem;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .blog-post h3 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-size: 18px;
+        }
+
+        .blog-post-date {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .blog-post-body {
+            padding: 2rem;
+        }
+
+        .blog-post-body p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post-read-more {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .blog-post-read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Utility Classes */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 2rem 0;
+        }
+
+        .highlight {
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        .icon-box {
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--teal);
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--teal);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .badge {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo"><span>Cynarion</span><span class="logo-accent">AI</span></div>
+        <ul>
+            <li><a onclick="showPage('home')">Home</a></li>
+            <li><a onclick="showPage('about')">About</a></li>
+            <li><a onclick="showPage('services')">Services</a></li>
+            <li><a onclick="showPage('resources')">Resources</a></li>
+            <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE: HOME -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>AI Governance for Regulated Enterprises</h1>
+                <p>Deploy AI safely, scale compliantly. Built by a 20-year regulatory insider.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="showPage('contact')">Start Your Assessment</button>
+                    <button class="btn btn-secondary" onclick="showPage('about')">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="container">
+            <h2>The AI Governance Crisis</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>66% of enterprises</h3>
+                    <p>rushed AI adoption without governance frameworks — and paid the price at audit.</p>
+                </div>
+                <div class="card">
+                    <h3>Regulatory pressure</h3>
+                    <p>OSFI E-23, NIST AI RMF, ISO 42001 — new standards arriving faster than your compliance team can adapt.</p>
+                </div>
+                <div class="card">
+                    <h3>Skill gap</h3>
+                    <p>Your teams know AI tools. They don't know how to use them compliantly in a regulated environment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Four Pillars -->
+        <section style="background: var(--light-gray);">
+            <div class="container">
+                <h2>Our Four Pillars of AI Governance</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="icon-box">📋</div>
+                        <h3>Governance Frameworks</h3>
+                        <p>Custom policies, risk matrices, and audit-ready documentation aligned to OSFI E-23, NIST AI RMF, ISO 42001, and PIPEDA standards.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-box">👥</div>
+                        <h3>Workforce Enablement</h3>
+                        <p>Role-based training programs that teach employees how to use AI tools responsibly — not just theoretically.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-box">🔍</div>
+                        <h3>Risk Assessment</h3>
+                        <p>Gap analysis, third-party AI vendor reviews, and compliance readiness audits for your current and planned AI systems.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-box">⚙️</div>
+                        <h3>Automation Enablement</h3>
+                        <p>Design and deploy AI agent workflows that reduce operational overhead without creating new compliance exposures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="container">
+            <h2>Why Cynarion AI</h2>
+            <div class="two-col">
+                <div>
+                    <h3>20+ years of regulatory inside knowledge</h3>
+                    <p>Founded by a governance expert who has sat in front of actual regulators at BMO, RBC, and Manulife. Not theory — real experience navigating OSFI, audit expectations, and risk frameworks.</p>
+                </div>
+                <div>
+                    <ul>
+                        <li>Built governance frameworks that passed enterprise audits</li>
+                        <li>Served as Federal Governance Representative for major bank</li>
+                        <li>Reduced audit findings by 35% through systematic governance</li>
+                        <li>Designed compliance controls for SWIFT, Fed Reserve, Interac</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="trust-badges">
+                <div class="badge">OSFI E-23 Aligned</div>
+                <div class="badge">NIST AI RMF Mapped</div>
+                <div class="badge">ISO 42001 Oriented</div>
+                <div class="badge">PIPEDA Compliant</div>
+            </div>
+
+            <div class="accent-box">
+                <h4>Building under our own frameworks</h4>
+                <p>Cynarion AI operates multiple AI-powered ventures using the same governance standards we consult on. We don't just recommend governance — we live it.</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="background: var(--navy); color: var(--white);">
+            <div class="container" style="text-align: center;">
+                <h2 style="color: var(--white); margin-bottom: 1rem;">Ready to Deploy AI Responsibly?</h2>
+                <p style="font-size: 16px; margin-bottom: 2rem;">Start with a free 30-minute AI Governance Readiness Assessment.</p>
+                <button class="btn btn-primary" onclick="showPage('contact')">Schedule Your Assessment</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE: ABOUT -->
+    <div id="about" class="page">
+        <section class="about-hero">
+            <div class="container">
+                <h1>About Cynarion AI</h1>
+                <p>The story of how 20 years in financial services governance led to founding an AI compliance practice.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>The Founder's Journey</h2>
+            <div class="two-col" style="margin-top: 3rem;">
+                <div>
+                    <p style="font-size: 16px; line-height: 2;">Zaheer Mohammed spent 20 years in the trenches of enterprise governance at some of Canada's largest financial institutions — RBC, Manulife, and BMO. He managed incidents, led audits, built security frameworks, and sat across the table from regulators.</p>
+                    <p style="margin-top: 1rem;">In 2025, he noticed a pattern: brilliant AI projects were failing not at execution, but at governance. Teams knew how to build with Claude, GPT, and other models. They didn't know how to do it compliantly in a regulated environment.</p>
+                    <p style="margin-top: 1rem;">That observation became Cynarion AI.</p>
+                </div>
+                <div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>2001–2015</h4>
+                            <p>RBC: from Technical Support Officer to Data Center Engineer. Built infrastructure, managed operations, learned what enterprise scale looks like.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>2015–2023</h4>
+                            <p>RBC: Senior Audit Manager & Security Scanning Leader. Designed security strategies, led audit programs, reduced vulnerability exposure across the enterprise.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>2023–2024</h4>
+                            <p>Manulife: Senior IT Auditor. Executed complex infrastructure and cybersecurity audits, adapted to evolving regulatory landscapes.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>2024–2025</h4>
+                            <p>BMO: Senior Manager, Governance & Remediation. Led enterprise-wide remediation, appointed Federal Governance Representative, built governance frameworks, reduced overdue audit items by 35%.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>2025–Now</h4>
+                            <p>Founded Cynarion AI. Building governance frameworks, workforce training programs, and AI automation solutions under one umbrella — proving governance and innovation work together.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--light-gray);">
+            <div class="container">
+                <h2>Core Values</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Compliance first</h3>
+                        <p>AI is a tool. Governance is the foundation. We don't compromise on regulatory alignment.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Practical, not theoretical</h3>
+                        <p>We've lived through audits, regulatory scrutiny, and system failures. Our frameworks work in practice.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Speed matters</h3>
+                        <p>Big consulting firms take 6 months. We prototype governance frameworks in 3 weeks. You get results faster.</p>
+                    </div>
+                    <div class="card">
+                        <h3>We build what we preach</h3>
+                        <p>Cynarion AI operates multiple ventures under the same governance standards we recommend to clients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>Credentials & Experience</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h3>Certifications</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Certified Information Systems Auditor (CISA)</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Certified Scrum Product Owner (CSPO)</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Advanced Certified Scrum Master (A-CSM)</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ SRE Foundation Certified</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Lean Six Sigma Yellow Belt</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ MBA (Australian Institute of Business)</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ M.Sc. Information Technology (University of Portsmouth)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Key Achievements</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Reduced audit findings by 35% at BMO</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Built enterprise governance frameworks adopted across Risk, Cyber, Operations</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Served as Federal Governance Representative for major bank</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Reduced system downtime by 40% through SRE leadership</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Led enterprise remediation across SWIFT, Fed Reserve, Interac, Payments Canada</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE: SERVICES -->
+    <div id="services" class="page">
+        <section class="hero" style="padding: 4rem 2rem;">
+            <div class="container">
+                <h1>AI Governance Services</h1>
+                <p>Four interconnected pillars designed to help regulated enterprises deploy AI safely and at scale.</p>
+            </div>
+        </section>
+
+        <!-- Pillar 1 -->
+        <section class="container">
+            <h2>1. Governance Frameworks</h2>
+            <div class="two-col">
+                <div>
+                    <p style="font-size: 16px;">Custom AI governance frameworks built to your regulatory environment — not one-size-fits-all templates.</p>
+                    <p style="margin-top: 1rem;">We deliver policy documents, risk matrices, control testing templates, and audit-ready documentation aligned to OSFI E-23, NIST AI RMF, ISO 42001, and PIPEDA.</p>
+                </div>
+                <div class="accent-box">
+                    <h4>What you get:</h4>
+                    <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ AI governance policy document (40+ pages)</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Risk assessment matrix (AI-specific)</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Control testing templates</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Third-party AI vendor review framework</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Compliance roadmap (OSFI/NIST/ISO aligned)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillar 2 -->
+        <section style="background: var(--light-gray);">
+            <div class="container">
+                <h2>2. Workforce AI Enablement</h2>
+                <div class="two-col">
+                    <div class="accent-box">
+                        <h4>Training program includes:</h4>
+                        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                            <li style="padding: 0.5rem 0; font-size: 14px;">✓ Role-based workshops (developers, business analysts, leaders)</li>
+                            <li style="padding: 0.5rem 0; font-size: 14px;">✓ Practical compliance scenarios</li>
+                            <li style="padding: 0.5rem 0; font-size: 14px;">✓ Data handling and prompt security training</li>
+                            <li style="padding: 0.5rem 0; font-size: 14px;">✓ Vendor selection & evaluation playbook</li>
+                            <li style="padding: 0.5rem 0; font-size: 14px;">✓ Assessment & certification</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p style="font-size: 16px;">Most enterprises train employees to use AI tools. We train them to use AI <span class="highlight">compliantly</span>.</p>
+                        <p style="margin-top: 1rem;">Hands-on workshops that teach your teams how to evaluate AI vendors, write safe prompts, handle regulated data, and escalate governance concerns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillar 3 -->
+        <section class="container">
+            <h2>3. AI Risk Assessment & Compliance Audit</h2>
+            <div class="two-col">
+                <div>
+                    <p style="font-size: 16px;">Before you deploy, know where you stand. We conduct deep-dive assessments of your current AI usage, planned implementations, and vendor landscape.</p>
+                    <p style="margin-top: 1rem;">Gap analysis against OSFI E-23, NIST AI RMF, ISO 42001. Readiness scoring. Remediation roadmap.</p>
+                </div>
+                <div class="accent-box">
+                    <h4>Assessment covers:</h4>
+                    <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Current AI inventory & usage audit</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Governance maturity assessment</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Third-party AI vendor compliance review</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Data security & privacy alignment check</li>
+                        <li style="padding: 0.5rem 0; font-size: 14px;">✓ Readiness score & improvement roadmap</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillar 4 -->
+        <section style="background: var(--light-gray);">
+            <div class="container">
+                <h2>4. AI Automation Enablement</h2>
+                <div class="two-col">
+                    <div class="accent-box">
+                        <h4>Deployment includes:</h4>
+                        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                            <li style="padding: 0.5rem 0; font-size: 14px;">✓ Workflow design & requirements</li>
+                            <li style="padding: 0.5rem 0; font-size: 14px;">✓ AI agent architecture & build</li>
+                            <li style="padding: 0.5rem 0; font-size: 14px;">✓ Governance safeguards & controls</li>
+                            <li style="padding: 0.5rem 0; font-size: 14px;">✓ Testing & compliance validation</li>
+                            <li style="padding: 0.5rem 0; font-size: 14px;">✓ Deployment & monitoring setup</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p style="font-size: 16px;">Design and deploy custom AI agent workflows that reduce operational overhead — without creating new compliance exposures.</p>
+                        <p style="margin-top: 1rem;">We handle the full lifecycle: strategy, architecture, build, testing, and deployment. Governance built in from day one, not bolted on after.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engagement Model -->
+        <section class="container">
+            <h2>Engagement Models</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Quick Assessment</h3>
+                    <p><strong>2–3 weeks</strong></p>
+                    <p>AI Governance Readiness Assessment. Understand your current state, gaps, and improvement roadmap.</p>
+                    <p style="margin-top: 1rem; color: var(--teal); font-weight: 600;">Perfect for: Getting started</p>
+                </div>
+                <div class="card">
+                    <h3>Framework Build</h3>
+                    <p><strong>4–8 weeks</strong></p>
+                    <p>Custom governance framework + training program. Everything your teams need to govern AI responsibly.</p>
+                    <p style="margin-top: 1rem; color: var(--teal); font-weight: 600;">Perfect for: Medium enterprises</p>
+                </div>
+                <div class="card">
+                    <h3>Full Implementation</h3>
+                    <p><strong>8–16 weeks</strong></p>
+                    <p>Governance framework + workforce training + automation enablement + ongoing support. End-to-end transformation.</p>
+                    <p style="margin-top: 1rem; color: var(--teal); font-weight: 600;">Perfect for: Enterprise-wide rollout</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE: RESOURCES -->
+    <div id="resources" class="page">
+        <section class="hero" style="padding: 4rem 2rem;">
+            <div class="container">
+                <h1>Resources & Guides</h1>
+                <p>Frameworks, checklists, and insights for AI governance in regulated industries.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>Blog & Articles</h2>
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <div class="blog-post-header">
+                        <h3>OSFI E-23: What Financial Services Actually Need to Do</h3>
+                        <div class="blog-post-date">Published: December 2024</div>
+                    </div>
+                    <div class="blog-post-body">
+                        <p>OSFI E-23 is live. Here's what it means for your bank, insurance company, or trust institution. We break down the requirements, timeline, and what "responsible AI" actually means in practice.</p>
+                        <a href="#" class="blog-post-read-more">Read full article →</a>
+                    </div>
+                </div>
+
+                <div class="blog-post">
+                    <div class="blog-post-header">
+                        <h3>The AI Governance Checklist: 10 Things Your Enterprise Needs</h3>
+                        <div class="blog-post-date">Published: January 2025</div>
+                    </div>
+                    <div class="blog-post-body">
+                        <p>Before you deploy AI at scale, make sure you have these 10 governance foundations in place. This checklist is based on 20+ years of enterprise compliance experience and real audit failures.</p>
+                        <a href="#" class="blog-post-read-more">Read full article →</a>
+                    </div>
+                </div>
+
+                <div class="blog-post">
+                    <div class="blog-post-header">
+                        <h3>Third-Party AI Vendor Assessment: What to Ask</h3>
+                        <div class="blog-post-date">Published: February 2025</div>
+                    </div>
+                    <div class="blog-post-body">
+                        <p>Evaluating ChatGPT Enterprise, Claude API, or other LLMs for regulated use? Here's the framework we use to assess third-party AI vendor compliance, data handling, and risk profile.</p>
+                        <a href="#" class="blog-post-read-more">Read full article →</a>
+                    </div>
+                </div>
+
+                <div class="blog-post">
+                    <div class="blog-post-header">
+                        <h3>Workforce AI Enablement: Training vs. Compliance</h3>
+                        <div class="blog-post-date">Published: January 2025</div>
+                    </div>
+                    <div class="blog-post-body">
+                        <p>Most enterprises train employees to use AI. We train them to use AI compliantly. Here's how our role-based training programs reduce governance risk while accelerating adoption.</p>
+                        <a href="#" class="blog-post-read-more">Read full article →</a>
+                    </div>
+                </div>
+
+                <div class="blog-post">
+                    <div class="blog-post-header">
+                        <h3>AI Governance Frameworks: NIST vs ISO 42001 vs OSFI</h3>
+                        <div class="blog-post-date">Published: February 2025</div>
+                    </div>
+                    <div class="blog-post-body">
+                        <p>Which framework should you implement? We compare NIST AI RMF, ISO/IEC 42001, and OSFI E-23. Each has strengths. Here's how to choose and build a hybrid approach.</p>
+                        <a href="#" class="blog-post-read-more">Read full article →</a>
+                    </div>
+                </div>
+
+                <div class="blog-post">
+                    <div class="blog-post-header">
+                        <h3>Why Your AI Project Failed at Audit (and How to Prevent It)</h3>
+                        <div class="blog-post-date">Published: January 2025</div>
+                    </div>
+                    <div class="blog-post-body">
+                        <p>Real stories from the audit room. We've seen brilliant AI projects get shut down by regulators. Here's what went wrong and how governance prevents the same mistakes.</p>
+                        <a href="#" class="blog-post-read-more">Read full article →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--light-gray); margin-top: 4rem;">
+            <div class="container">
+                <h2>Free Downloads</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>📋 AI Governance Checklist</h3>
+                        <p>10-item checklist to assess your enterprise's AI governance maturity. Aligned to OSFI E-23 and NIST AI RMF.</p>
+                        <button class="btn btn-secondary" style="margin-top: 1rem; width: 100%; text-align: center;" onclick="showPage('contact')">Download (Free)</button>
+                    </div>
+                    <div class="card">
+                        <h3>📊 AI Risk Assessment Template</h3>
+                        <p>Spreadsheet template to inventory your current AI systems, assess risks, and track remediation progress.</p>
+                        <button class="btn btn-secondary" style="margin-top: 1rem; width: 100%; text-align: center;" onclick="showPage('contact')">Download (Free)</button>
+                    </div>
+                    <div class="card">
+                        <h3>🎯 Vendor Assessment Playbook</h3>
+                        <p>Framework for evaluating third-party AI vendors (ChatGPT Enterprise, Claude API, etc.) against your governance requirements.</p>
+                        <button class="btn btn-secondary" style="margin-top: 1rem; width: 100%; text-align: center;" onclick="showPage('contact')">Download (Free)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE: CONTACT -->
+    <div id="contact" class="page">
+        <section class="hero" style="padding: 4rem 2rem;">
+            <div class="container">
+                <h1>Get Started</h1>
+                <p>Schedule your free 30-minute AI Governance Readiness Assessment.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 4rem 0;">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="card" style="border: none;">
+                    <h2 style="text-align: left; margin-bottom: 2rem;">Contact us</h2>
+                    
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="role">Your Role</label>
+                            <input type="text" id="role" name="role" placeholder="e.g., Chief Risk Officer, Compliance Director" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="focus">What's your primary interest?</label>
+                            <select id="focus" name="focus" style="padding: 12px; border: 1px solid var(--border); border-radius: 4px; width: 100%; font-family: inherit; font-size: 14px;" required>
+                                <option value="">Select one...</option>
+                                <option value="governance">Governance Framework</option>
+                                <option value="training">Workforce Training</option>
+                                <option value="assessment">Risk Assessment</option>
+                                <option value="automation">AI Automation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Tell us about your AI governance challenge</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Request Assessment</button>
+                    </form>
+
+                    <p style="text-align: center; margin-top: 2rem; color: var(--text-light); font-size: 13px;">We'll follow up within 24 hours to schedule your 30-minute complimentary assessment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--light-gray);">
+            <div class="container">
+                <h2>Other Ways to Connect</h2>
+                <div style="text-align: center;">
+                    <p style="font-size: 16px; margin: 1rem 0;">
+                        <strong>Email:</strong> <a href="mailto:zaheer.mohammed@cynarion.com" style="color: var(--teal); text-decoration: none;">zaheer.mohammed@cynarion.com</a>
+                    </p>
+                    <p style="font-size: 16px; margin: 1rem 0;">
+                        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/zaheer-a-mohammed/" style="color: var(--teal); text-decoration: none;" target="_blank">linkedin.com/in/zaheer-a-mohammed</a>
+                    </p>
+                    <p style="font-size: 16px; margin: 1rem 0;">
+                        <strong>Location:</strong> Toronto, Ontario · Available for remote engagement
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a onclick="showPage('home')">Home</a>
+            <a onclick="showPage('about')">About</a>
+            <a onclick="showPage('services')">Services</a>
+            <a onclick="showPage('resources')">Resources</a>
+            <a onclick="showPage('contact')">Contact</a>
+        </div>
+        <p>&copy; 2025 Cynarion AI. All rights reserved. | AI Governance for Regulated Enterprises</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company'),
+                role: formData.get('role'),
+                focus: formData.get('focus'),
+                message: formData.get('message'),
+                timestamp: new Date().toISOString()
+            };
+
+            // Log to console (replace with actual form handling)
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you! We\'ll be in touch within 24 hours. Check your email for confirmation.');
+            event.target.reset();
+            showPage('home');
+        }
+
+        // Mobile menu toggle (optional, if you want to add a hamburger menu later)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Any initialization code can go here
+        });
+    </script>
+</body>
+</html>
