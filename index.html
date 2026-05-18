@@ -995,7 +995,7 @@
                 <div class="card" style="border: none;">
                     <h2 style="text-align: left; margin-bottom: 2rem;">Contact us</h2>
                     
-                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <form class="contact-form" action="https://formspree.io/f/mgoqezzw" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -1085,29 +1085,7 @@
             }
         }
 
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(event.target);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                company: formData.get('company'),
-                role: formData.get('role'),
-                focus: formData.get('focus'),
-                message: formData.get('message'),
-                timestamp: new Date().toISOString()
-            };
-
-            // Log to console (replace with actual form handling)
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            alert('Thank you! We\'ll be in touch within 24 hours. Check your email for confirmation.');
-            event.target.reset();
-            showPage('home');
-        }
+        // Form handling is now done by Formspree via the action attribute
 
         // Mobile menu toggle (optional, if you want to add a hamburger menu later)
         document.addEventListener('DOMContentLoaded', function() {
